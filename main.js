@@ -1,3 +1,4 @@
+
 const btnProyectos = document.getElementById('btnProyectos');
 const btnEstudios = document.getElementById('btnEstudios');
 const btnSobreMi = document.getElementById('btnSobreMi');
@@ -99,3 +100,4 @@ btnIzq.addEventListener('click', () => {
 
 // Inicializar
 updateSlider();
+
