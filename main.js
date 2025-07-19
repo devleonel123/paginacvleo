@@ -35,59 +35,67 @@ btnCerrarEstudios.addEventListener('click', () => (secciones.estudios.style.disp
 btnCerrarExperiencia.addEventListener('click', () => (secciones.experiencia.style.display = 'none'));
 
 
-// Carrusel Diagramas
 const slider = document.querySelector('#carrusel-diagramas .slider');
 const imgs = Array.from(slider.querySelectorAll('img'));
 const btnIzq = document.querySelector('#carrusel-diagramas .izquierda');
 const btnDer = document.querySelector('#carrusel-diagramas .derecha');
 
-let currentIndex = 0; // índice del centro visible (imagen con clase active)
+let currentIndex = 0;
 
-// Función para actualizar la posición y estilos de las imágenes
+// Función que decide cuántas imágenes mostrar según el ancho de pantalla
+function getVisibleCount() {
+  const width = window.innerWidth;
+  if (width <= 480) return 1;
+  if (width <= 768) return 3;
+  return 5;
+}
+
 function updateSlider() {
   const total = imgs.length;
-  // Queremos mostrar 5 imágenes visibles: posiciones -2, -1, 0, 1, 2 (circular)
-  // La imagen central es imgs[currentIndex]
+  const visibleCount = getVisibleCount();
+  const half = Math.floor(visibleCount / 2);
 
   imgs.forEach((img, i) => {
     img.classList.remove('active');
-    img.style.opacity = '0.3';
-    img.style.width = '110px';
-    img.style.height = '80px';
+    img.style.opacity = '0';
+    img.style.width = '0';
+    img.style.height = '0';
     img.style.boxShadow = 'none';
-    img.style.order = '0'; // reset
+    img.style.order = '0';
+    img.style.margin = '0';
+  });
 
-    // Calculamos distancia circular al currentIndex
-    let diff = i - currentIndex;
-    if (diff < -imgs.length / 2) diff += imgs.length;
-    if (diff > imgs.length / 2) diff -= imgs.length;
+  for (let offset = -half; offset <= half; offset++) {
+    let imgIndex = (currentIndex + offset + total) % total;
+    let img = imgs[imgIndex];
 
-    if (diff === 0) {
-      // Imagen central
+    let absOffset = Math.abs(offset);
+
+    // Mostrar imagen con tamaño y estilo según su distancia al centro
+    if (absOffset === 0) {
       img.classList.add('active');
       img.style.opacity = '1';
-      img.style.width = '180px';
-      img.style.height = '130px';
+      img.style.width = visibleCount === 1 ? '180px' : '180px';
+      img.style.height = visibleCount === 1 ? '130px' : '130px';
       img.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
       img.style.order = 0;
-    } else if (Math.abs(diff) === 1) {
+      img.style.margin = '0 0.5rem';
+    } else if (absOffset === 1) {
       img.style.opacity = '0.6';
-      img.style.order = diff;
-    } else if (Math.abs(diff) === 2) {
+      img.style.width = visibleCount === 1 ? '0' : '110px';
+      img.style.height = visibleCount === 1 ? '0' : '80px';
+      img.style.order = offset;
+      img.style.margin = '0 0.3rem';
+    } else if (absOffset === 2 && visibleCount === 5) {
       img.style.opacity = '0.3';
-      img.style.order = diff;
-    } else {
-      // Ocultamos las que están muy lejos para evitar superposiciones
-      img.style.opacity = '0';
-      img.style.width = '0';
-      img.style.height = '0';
-      img.style.margin = '0';
-      img.style.order = 99;
+      img.style.width = '110px';
+      img.style.height = '80px';
+      img.style.order = offset;
+      img.style.margin = '0 0.3rem';
     }
-  });
+  }
 }
 
-// Botones
 btnDer.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % imgs.length;
   updateSlider();
@@ -97,6 +105,8 @@ btnIzq.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
   updateSlider();
 });
+
+window.addEventListener('resize', updateSlider);
 
 // Inicializar
 updateSlider();
