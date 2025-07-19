@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leonel Roldán - Portafolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="cvac.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><button class="btn" id="btnProyectos">Proyectos</button></li>
+        <li><button class="btn" id="btnEstudios">Estudios</button></li>
+        <li><button class="btn" id="btnSobreMi">Experiencia</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="principal">
+    <section aria-label="Presentación personal">
+      <h1>Sobre mí</h1>
+      <p id="presentacion">
+        Tengo experiencia en el levantamiento de requerimientos funcionales y no funcionales, 
+        documentación de historias de usuario, elaboración de diagramas UML y coordinación con equipos bajo 
+        metodologías ágiles como Scrum. Utilizo herramientas como Jira, Confluence y Azure DevOps para documentar, 
+        planificar y dar seguimiento a proyectos.
+        También cuento con conocimientos sólidos en desarrollo frontend con HTML, CSS, JavaScript y React, 
+        lo que me permite proponer soluciones viables tanto desde el análisis como desde la implementación técnica.
+      </p>
+    </section>
+
+    <section class="imagen-contenedor" aria-label="Foto de perfil">
+      <img src="imagenes/perfil.jpeg" alt="Foto de perfil de Leonel" id="perfilf" />
+    </section>
+
+    <section class="redesS" aria-label="Redes sociales y contacto">
+      <a href="https://github.com/devleonel123" target="_blank" rel="noopener noreferrer">
+        <img src="imagenes/git.png" alt="GitHub" class="redes" /> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/leonel21/" target="_blank" rel="noopener noreferrer">
+        <img src="imagenes/linkedin.png" alt="LinkedIn" class="redes" /> LinkedIn
+      </a>
+      <a href="mailto:edileoleonel@gmail.com">
+        <img src="imagenes/mail.png" alt="Correo electrónico" class="redes" /> edileoleonel@gmail.com
+      </a>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="Proyectos" class="modal-seccion" aria-label="Proyectos destacados">
+      <nav id="navP" class="nav-modal">
+        <h3>Proyectos</h3>
+        <button id="cerrar" class="cerrarclas" aria-label="Cerrar Proyectos">X</button>
+      </nav>
+      <article class="Proyecto">
+        <h4 class="tituloP">Clon de Landingpage</h4>
+        <img src="imagenes/clon.PNG" alt="Captura de Clon de Landingpage" class="imagenP" />
+        <a href="https://devleonel123.github.io/clonlanding/" target="_blank" rel="noopener noreferrer" class="linkP"
+          >Ver proyecto</a
+        >
+      </article>
+      <article class="Proyecto">
+        <h4 class="tituloP">Calificador</h4>
+        <img src="imagenes/calificador.PNG" alt="Captura del proyecto Calificador" class="imagenP" />
+        <a href="https://devleonel123.github.io/calificador/" target="_blank" rel="noopener noreferrer" class="linkP"
+          >Ver proyecto</a
+        >
+      </article>
+    </section>
+
+    <!-- Sección Estudios -->
+    <section id="Estudios" class="modal-seccion" aria-label="Estudios">
+      <nav id="navE" class="nav-modal">
+        <h3>Estudios</h3>
+        <button id="cerrar1" class="cerrarclas" aria-label="Cerrar Estudios">X</button>
+      </nav>
+      <p>
+        🎓 Formación Académica y Autodidacta
+        Cursé la Licenciatura en Informática en la UAEMex, donde adquirí conocimientos 
+        fundamentales en programación, bases de datos, ingeniería de software y análisis de sistemas.
+        Además, complemento constantemente mi formación de manera autodidacta, a través de 
+        documentación oficial, cursos en línea y prácticas personales que me han permitido 
+        desarrollar proyectos reales y mantenerme actualizado en tecnologías como React, Node.js, Jira, Confluence y Azure DevOps.
+      </p>
+      <img src="imagenes/uaemex.png" alt="Logo UAEX" id="imagenUAEM" />
+    </section>
+
+    <!-- Sección Experiencia -->
+    <section id="sobremisE" class="modal-seccion" aria-label="Experiencia profesional">
+      <nav id="navS" class="nav-modal">
+        <h3>Experiencia</h3>
+        <button id="cerrar2" class="cerrarclas" aria-label="Cerrar Experiencia">X</button>
+      </nav>
+      <p>
+        💼 Sistema Web para Recursos Humanos (RH)
+        Durante mi servicio social, desarrollé un sistema web para el área de Recursos Humanos en 
+        una institución educativa. Mi rol fue analista programador, participando en el levantamiento 
+        de requerimientos con el cliente, diseño de diagramas UML, y desarrollo del sistema utilizando HTML, 
+        CSS, JavaScript, PHP y MySQL.
+        El sistema generaba reportes en PDF sobre faltas, permisos y vacaciones del personal,
+         facilitando la toma de decisiones del área administrativa.
+      </p>
+    </section>
+  </main>
+  <section id="experiencia-analista">
+    <h2>Experiencia como Analista</h2>
+    <p>Durante el desarrollo de proyectos web y mi servicio social, tuve la oportunidad de actuar como analista, realizando levantamiento de requerimientos, historias de usuario y documentación en herramientas como Confluence, Jira y Azure DevOps.</p>
+    <ul>
+        <li>📄 <a href="https://edileoleonel.atlassian.net/wiki/external/YjZiNGYzOWE1Y2ZiNGI1MjlhNDIxN2I1NGEzZjNlOGY" target="_blank">Historia de Usuario documentada en Confluence</a></li>
+        <li>🛠️ <a href="https://edileoleonel.atlassian.net/wiki/external/ZDcyNzg3NWU0NGQ0NGVlNzllZTEzOWQ1ZWIxZGJlMTQ" target="_blank">Diagrama de Caso de Uso</a></li>
+        <li>📌 <a href="https://edileoleonel.atlassian.net/wiki/external/YmFiNzA1NjQyYmQ2NGFmYmI3YzY0OGU2YWRmMzZjNTQ">Sprint Planning</a></li>
+        <li>🛠️ <a href="https://edileoleonel.atlassian.net/wiki/external/MjEzOTRmMGRhNTFjNGFiM2E5MGNmZGI3MWVhZTIxNjE" target="_blank">Requerimiento funcional</a></li>
+    </ul>
+    </section>
+
+  <h2>Herramientas</h2>
+    <section id="herramientas">
+    <div class="herramienta">
+        <img src="imagenes/confluence.jpg" alt="Confluence" />
+        <p>Confluence</p>
+    </div>
+    <div class="herramienta">
+        <img src="imagenes/jira.png" alt="Jira" />
+        <p>Jira</p>
+    </div>
+    <div class="herramienta">
+        <img src="imagenes/azure.png" alt="Azure DevOps" />
+        <p>Azure</p>
+    </div>
+    </section>
+  <h2>Diagramas</h2>
+    <section id="carrusel-diagramas" aria-label="Carrusel de diagramas">
+    <button class="flecha izquierda" aria-label="Anterior">&#10094;</button>
+    <div class="slider-container">
+        <div class="slider">
+        <img src="imagenes/analisisc.drawio.png" alt="Diagrama 1" />
+        <img src="imagenes/Diagrama actividades.drawio.png" alt="Diagrama 2" />
+        <img src="imagenes/DiagramaSecuenciaCancelacion.png" alt="Diagrama 3" />
+        <img src="imagenes/Dsecuenciaejemplo.drawio.png" alt="Diagrama 4" />
+        <img src="imagenes/horariosac.drawio.png" alt="Diagrama 5" />
+        <img src="imagenes/secuenciaavan.drawio.png" alt="Diagrama 6" />
+        </div>
+    </div>
+    <button class="flecha derecha" aria-label="Siguiente">&#10095;</button>
+    </section>
+  <h2>Tecnologías</h2>
+  <section id="tecnologias" aria-label="Tecnologías que manejo">
+    <div class="tecnologia">
+      <img src="imagenes/css3.png" alt="Logo CSS3" />
+    </div>
+    <div class="tecnologia">
+      <img src="imagenes/js.png" alt="Logo JavaScript" />
+    </div>
+    <div class="tecnologia">
+      <img src="imagenes/html.png" alt="Logo HTML5" />
+    </div>
+    <div class="tecnologia">
+      <img src="imagenes/nodejs.png" alt="Logo Node.js" />
+    </div>
+    <div class="tecnologia">
+      <img src="imagenes/boots.png" alt="Logo Bootstrap" />
+    </div>
+    <div class="tecnologia">
+      <img src="imagenes/react.png" alt="Logo React" />
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Leonel Isai Roldan Nava. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="cvac.js"></script>
+</body>
+</html>
