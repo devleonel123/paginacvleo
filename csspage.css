@@ -373,17 +373,19 @@ footer {
 /*-------------------------------------Carrusel--------------------------------*/
 #carrusel-diagramas {
   position: relative;
-  max-width: 1100px;
+  width: 100%;
   margin: 2rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .slider-container {
   overflow: hidden;
-  width: 700px; /* Ajusta según tu diseño */
+  width: 700px;
+  max-width: 90%; /* Ajusta según tu diseño */
 }
 
 .slider {
@@ -496,5 +498,70 @@ footer {
 
   .herramienta p {
     font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .slider-container {
+    width: 100%;
+  }
+
+  .slider img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .slider img.active {
+    width: 130px;
+    height: 100px;
+  }
+
+  .flecha {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .herramienta {
+    max-width: 100px;
+  }
+
+  .herramienta img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .herramienta p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider img {
+    width: 60px;
+    height: 45px;
+  }
+
+  .slider img.active {
+    width: 100px;
+    height: 75px;
+  }
+
+  .herramienta img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .herramienta p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  #tecnologias {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tecnologia {
+    max-width: 100%;
+    padding: 0.8rem;
   }
 }
